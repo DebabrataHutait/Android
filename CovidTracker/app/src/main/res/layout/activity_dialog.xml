@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DialogActivity"
+    android:padding="15dp"
+    android:background="@color/colorAccent">
+
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_info_black"
+        android:paddingTop="2dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Covid Tracker"
+        android:layout_toRightOf="@id/iv"
+        android:fontFamily="@font/graphikmedium"
+        android:textSize="22sp"
+        android:layout_marginStart="4dp"/>
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Source:"
+        android:fontFamily="@font/graphikmedium"
+        android:layout_below="@id/iv"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"/>
+    <TextView
+        android:id="@id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="http://www.corona.lmao.ninja/v2/"
+        android:fontFamily="sans-serif"
+        android:layout_below="@id/tv1"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"
+        android:layout_marginStart="4dp"/>
+
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Addtional:"
+        android:fontFamily="@font/graphikmedium"
+        android:layout_below="@id/tv2"
+        android:layout_marginTop="12dp"
+        android:textSize="16sp"/>
+    <TextView
+        android:id="@+id/tv4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="YouTube,StackOverflow"
+        android:fontFamily="sans-serif"
+        android:layout_below="@id/tv3"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"
+        android:layout_marginStart="4dp"/>
+
+    <TextView
+        android:id="@+id/tv5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Created by:"
+        android:fontFamily="@font/graphikmedium"
+        android:layout_below="@id/tv4"
+        android:layout_marginTop="18dp"
+        android:textSize="16sp"/>
+    <TextView
+        android:id="@+id/tv6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Debabrata Hutait"
+        android:fontFamily="sans-serif"
+        android:layout_toEndOf="@id/tv5"
+        android:layout_below="@id/tv4"
+        android:layout_marginTop="18dp"
+        android:textSize="16sp"
+        android:layout_marginStart="4dp"/>
+
+    <TextView
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Close"
+        android:textSize="16sp"
+        android:layout_below="@id/tv6"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorAccent"
+        android:textColor="@color/colorPrimary"
+        android:padding="5dp"
+        android:layout_alignParentRight="true"/>
+
+</RelativeLayout>

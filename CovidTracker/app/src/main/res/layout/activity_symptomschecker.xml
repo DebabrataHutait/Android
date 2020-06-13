@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SymptomsChecker"
+    android:orientation="vertical"
+    android:background="@color/colorAccent">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Symptoms Checker"
+                android:fontFamily="@font/graphiksemibold"
+                android:textSize="24dp" />
+
+
+            <RelativeLayout
+                android:id="@+id/rl1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv1"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="30dp"
+                android:background="@color/colorWhite"
+                android:padding="15dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/q1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="What is your gender?"
+                    android:fontFamily="@font/graphiksemibold"
+                    android:textSize="20sp"/>
+
+                <TextView
+                    android:id="@+id/a11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/q1"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/number_background"
+                    android:text="Male"
+                    android:textSize="16dp"
+                    android:padding="10dp"/>
+
+                <TextView
+                    android:id="@+id/a12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/a11"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/number_background"
+                    android:text="Female"
+                    android:textSize="16dp"
+                    android:padding="10dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/a12"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/number_background"
+                    android:text="Other"
+                    android:textSize="16dp"
+                    android:padding="10dp"/>
+
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv1"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="30dp"
+                android:background="@color/colorWhite"
+                android:padding="15dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/q2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Enter your age-"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/graphiksemibold"/>
+
+                <EditText
+                    android:id="@+id/a21"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/q2"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/number_background"
+                    android:textSize="16dp"
+                    android:padding="18dp"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/a21"
+                    android:layout_marginTop="10dp"
+                    android:text="NEXT"
+                    android:background="@drawable/button"
+                    android:textColor="@color/colorWhite"
+                    android:fontFamily="@font/graphikmedium"
+                    />
+
+
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv1"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="30dp"
+                android:background="@color/colorWhite"
+                android:padding="15dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/q3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Have you or someone in your family staying with you came close contact with a laboratory confirmed COVID-19 patient in last 14 days?"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/graphikmedium"/>
+
+                <TextView
+                    android:id="@+id/a31"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/q3"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/number_background"
+                    android:text="Yes"
+                    android:fontFamily="@font/graphikmedium"
+                    android:textSize="18dp"
+                    android:padding="18dp"/>
+
+                <TextView
+                    android:id="@+id/a32"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/a31"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="5dp"
+                    android:text="No"
+                    android:background="@drawable/number_background"
+                    android:fontFamily="@font/graphikmedium"
+                    android:textSize="18dp"
+                    android:padding="18dp"/>
+
+
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv1"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="30dp"
+                android:background="@color/colorWhite"
+                android:padding="15dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/q4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Have you or someone in your family staying with you attended a
+                    large gathering/ in a migration center in the last 14 days?"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/graphikmedium"/>
+
+                <TextView
+                    android:id="@+id/a41"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/q4"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/number_background"
+                    android:text="Yes"
+                    android:fontFamily="@font/graphikmedium"
+                    android:textSize="18dp"
+                    android:padding="18dp"/>
+
+                <TextView
+                    android:id="@+id/a42"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/a41"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="5dp"
+                    android:text="No"
+                    android:background="@drawable/number_background"
+                    android:fontFamily="@font/graphikmedium"
+                    android:textSize="18dp"
+                    android:padding="18dp"/>
+
+
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv1"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="30dp"
+                android:background="@color/colorWhite"
+                android:padding="15dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/q5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Are you currently working or essential services in public exposed places(such as hospitals, retail outlets, delivary services)"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/graphikmedium"/>
+
+                <TextView
+                    android:id="@+id/a51"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/q5"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/number_background"
+                    android:text="Yes"
+                    android:fontFamily="@font/graphikmedium"
+                    android:textSize="18dp"
+                    android:padding="18dp"/>
+
+                <TextView
+                    android:id="@+id/a52"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/a51"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="5dp"
+                    android:text="No"
+                    android:background="@drawable/number_background"
+                    android:fontFamily="@font/graphikmedium"
+                    android:textSize="18dp"
+                    android:padding="18dp"/>
+
+
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv1"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="30dp"
+                android:background="@color/colorWhite"
+                android:padding="15dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/q6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Is someone in our family staying with you currently working for essential services in public exposed places(such as hospitals, retail outlets, delivary services)"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/graphikmedium"/>
+
+                <TextView
+                    android:id="@+id/a61"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/q6"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/number_background"
+                    android:text="Yes"
+                    android:fontFamily="@font/graphikmedium"
+                    android:textSize="18dp"
+                    android:padding="18dp"/>
+
+                <TextView
+                    android:id="@+id/a62"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/a61"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="5dp"
+                    android:text="No"
+                    android:background="@drawable/number_background"
+                    android:fontFamily="@font/graphikmedium"
+                    android:textSize="18dp"
+                    android:padding="18dp"/>
+
+
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</LinearLayout>
