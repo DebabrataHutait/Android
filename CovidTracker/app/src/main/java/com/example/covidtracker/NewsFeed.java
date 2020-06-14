@@ -67,7 +67,15 @@ public class NewsFeed extends AppCompatActivity {
                     progressBar.setVisibility(View.INVISIBLE);
                     super.onPageFinished(view, url);
                 }
+
+                @Override
+                public void onPageCommitVisible(WebView view, String url) {
+
+                    progressBar.setVisibility(View.INVISIBLE);
+                    super.onPageCommitVisible(view, url);
+                }
             });
+
 
     }
 }
