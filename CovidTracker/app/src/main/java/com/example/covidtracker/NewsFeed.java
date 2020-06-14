@@ -11,6 +11,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 public class NewsFeed extends AppCompatActivity {
 
@@ -45,37 +46,34 @@ public class NewsFeed extends AppCompatActivity {
             toolbar=(Toolbar) findViewById(R.id.newsToolbar);
             webView=findViewById(R.id.webView);
             progressBar=findViewById(R.id.progress);
-
             setSupportActionBar(toolbar);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            webView.setWebViewClient(new WebViewClient());
-            webView.loadUrl("https://indianexpress.com/?s=corona");
-            webSettings=webView.getSettings();
 
-            webView.setWebViewClient(new WebViewClient(){
+            if (!DataConnection.checkInternetConnection(this)) {
+                progressBar.setVisibility(View.INVISIBLE);
+                Toast.makeText(getApplicationContext(), "No Internet!", Toast.LENGTH_SHORT).show();
+            } else {
+                webView.setWebViewClient(new WebViewClient());
+                webView.loadUrl("https://indianexpress.com/?s=corona");
+                webSettings = webView.getSettings();
 
-                @Override
-                public void onPageStarted(WebView view, String url, Bitmap favicon) {
+                webView.setWebViewClient(new WebViewClient() {
 
-                    progressBar.setVisibility(View.VISIBLE);
-                    super.onPageStarted(view, url, favicon);
-                }
+                    @Override
+                    public void onPageStarted(WebView view, String url, Bitmap favicon) {
 
-                @Override
-                public void onPageFinished(WebView view, String url) {
+                        progressBar.setVisibility(View.VISIBLE);
+                        super.onPageStarted(view, url, favicon);
+                    }
 
-                    progressBar.setVisibility(View.INVISIBLE);
-                    super.onPageFinished(view, url);
-                }
+                    @Override
+                    public void onPageCommitVisible(WebView view, String url) {
 
-                @Override
-                public void onPageCommitVisible(WebView view, String url) {
-
-                    progressBar.setVisibility(View.INVISIBLE);
-                    super.onPageCommitVisible(view, url);
-                }
-            });
-
+                        progressBar.setVisibility(View.INVISIBLE);
+                        super.onPageCommitVisible(view, url);
+                    }
+                });
+            }
 
     }
 }
