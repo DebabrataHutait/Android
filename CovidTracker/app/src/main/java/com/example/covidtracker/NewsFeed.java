@@ -43,7 +43,6 @@ public class NewsFeed extends AppCompatActivity {
 
             setSupportActionBar(toolbar);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setDisplayShowTitleEnabled(false);
             webView.setWebViewClient(new WebViewClient());
             webView.loadUrl("https://indianexpress.com/?s=corona");
             webSettings=webView.getSettings();
