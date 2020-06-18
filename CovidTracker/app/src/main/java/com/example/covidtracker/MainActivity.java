@@ -1,24 +1,30 @@
 package com.example.covidtracker;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.menu.MenuBuilder;
+import androidx.appcompat.widget.PopupMenu;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.icu.lang.UCharacter;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
     CollapsingToolbarLayout collapsingToolbarLayout;
     Toolbar toolbar, tool;
@@ -27,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     private long backPressTime;
     private Toast toast;
     Button button;
+    RelativeLayout relativeLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,12 +45,38 @@ public class MainActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolBar);
         collapsingToolbarLayout = findViewById(R.id.collToolbar);
         appBarLayout = findViewById(R.id.appBar);
+        relativeLayout=findViewById(R.id.rltool);
 
         collapsingToolbar();
 
     }
 
-    public void openDialog(View view) {
+    public void popUp(View view){
+
+        PopupMenu popupMenu=new PopupMenu(this,view);
+        popupMenu.setOnMenuItemClickListener(this);
+        popupMenu.inflate(R.menu.item_menu);
+        popupMenu.show();
+    }
+
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+
+        switch (item.getItemId()){
+
+            case R.id.share:
+                share();
+                return true;
+            case R.id.about:
+                openDialog();
+                return true;
+            default:
+                return  false;
+        }
+
+    }
+
+    public void openDialog() {
 
         final AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
         View mview=getLayoutInflater().inflate(R.layout.activity_dialog,null);
@@ -63,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         alertDialog.show();
     }
 
-    public void share(View view){
+    public void share(){
 
         intent=new Intent(Intent.ACTION_SEND);
         intent.setType("text/Plain");
@@ -91,9 +124,11 @@ public class MainActivity extends AppCompatActivity {
                     scrollRange = appBarLayout.getTotalScrollRange();
                 }
                 if (scrollRange + i == 0) {
+                    relativeLayout.setVisibility(View.GONE);
                     collapsingToolbarLayout.setTitle("CovidTracker");
                     isShow = false;
                 } else {
+                    relativeLayout.setVisibility(View.VISIBLE);
                     collapsingToolbarLayout.setTitle("");
                     isShow=true;
                 }
