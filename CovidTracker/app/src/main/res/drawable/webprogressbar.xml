@@ -7,14 +7,9 @@
 
     <shape
         android:shape="ring"
-        android:useLevel="false">
-
-        <gradient
-            android:centerY="0.5"
-            android:startColor="@color/colorWhite"
-            android:endColor="@color/colorPrimaryDark"
-            android:type="sweep"
-            android:useLevel="false" />
+        android:useLevel="false"
+        android:thickness="@dimen/activity_horizontal_margin">
+        <solid android:color="@color/colorPrimary"/>
 
     </shape>
 

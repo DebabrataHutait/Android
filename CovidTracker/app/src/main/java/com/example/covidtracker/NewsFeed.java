@@ -3,6 +3,7 @@ package com.example.covidtracker;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -19,6 +20,7 @@ public class NewsFeed extends AppCompatActivity {
     WebSettings webSettings;
     Toolbar toolbar;
     ProgressBar progressBar;
+    int colorCode;
 
     @Override
     public void onBackPressed() {
@@ -46,6 +48,8 @@ public class NewsFeed extends AppCompatActivity {
             toolbar=(Toolbar) findViewById(R.id.newsToolbar);
             webView=findViewById(R.id.webView);
             progressBar=findViewById(R.id.progress);
+            colorCode = Color.parseColor("#1d5f8a");
+            progressBar.setIndeterminateTintList(ColorStateList.valueOf(colorCode));
             setSupportActionBar(toolbar);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
